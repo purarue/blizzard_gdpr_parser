@@ -169,7 +169,7 @@ def parse_if_known(header, table):
     Use a couple different table matching patterns to parse event data from tables
     """
     hh = ss(header).strip()
-    # ignore friend/block lists, anything explicity IGNORED and EU/NA HearthStone info
+    # ignore friend/block lists, anything explicitly IGNORED and EU/NA HearthStone info
     if hh in IGNORE or ignore_friends_lists(hh) or ends_with_hearthstone_region(hh):
         logger.debug(f"Ignoring table {hh}...")
         return []
