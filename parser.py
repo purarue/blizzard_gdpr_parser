@@ -136,7 +136,10 @@ def parse_regular_table(table, header_tag):
         logger.warning("Couldnt find date-like key in {}".format(headers))
         return
     for tr in table.find_all("tr"):
-        if len(tr.find_all("td")) == 0 and len(tr.find_all("th")) > 0:
+        if len(tr.find_all("td")) == 0 and len(tr.find_all("th")) > 1:
+            continue
+        if len(tr.find_all('td')) < 2:
+            logger.debug("Not enough values for row in regular table")
             continue
         td_text = [ss(k) for k in tr.find_all("td")]
         en_td_text = list(enumerate(td_text))
