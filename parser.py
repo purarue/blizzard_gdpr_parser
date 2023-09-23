@@ -103,7 +103,7 @@ def is_date_parseable(val):
 # like 'battle.net account data'
 def parse_key_value_table(table, header_tag):
     """
-    Parses a key-value like talbe, looks for dates
+    Parses a key-value like table, looks for dates
     as values as column names that look like they describe dates
     """
     for tr in table.find_all("tr"):
@@ -113,7 +113,7 @@ def parse_key_value_table(table, header_tag):
         try:
             assert len(kv) == 2
         except:
-            logger.warning(f"{kv} doesnt have 2 entires, expected key-value pairs")
+            logger.warning(f"{kv} doesn't have 2 entries, expected key-value pairs")
         key, value = kv
         # if key looks like a description to a date, or value looks like date
         if key_is_date_like(ss(key)) or (
@@ -133,7 +133,7 @@ def parse_regular_table(table, header_tag):
     try:
         date_index = list(map(key_is_date_like, headers)).index(True)
     except ValueError:
-        logger.warning("Couldnt find date-like key in {}".format(headers))
+        logger.warning("Couldn't find date-like key in {}".format(headers))
         return
     for tr in table.find_all("tr"):
         if len(tr.find_all("td")) == 0 and len(tr.find_all("th")) > 1:
