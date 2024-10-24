@@ -8,7 +8,7 @@ This searches for `tables` which contains things that look like dates/times, and
 
 Was a very manual process, lots of small changes till I got the output I wanted, so not sure if it'd work for other people. Leaving it here as reference.
 
-Used as part of my [`HPI`](https://github.com/seanbreckenridge/HPI)
+Used as part of my [`HPI`](https://github.com/purarue/HPI)
 
 ## Run
 
